@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"  
+      xmlns:p="http://primefaces.org/ui">  
+
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <h:outputStylesheet name="./css/default.css"/>
+        <h:outputStylesheet name="./css/cssLayout.css"/>
+        <title>PhotoGeo</title>
+    </h:head>
+
+    <h:body>
+
+        <div class="cabecario">
+            <ui:insert name="cabecario">
+                <ui:include src="cabecario.xhtml"></ui:include>
+            </ui:insert>
+        </div>
+
+        <p:commandButton value="Criar Album" onclick="PF('criarAlbum').show()"/>
+
+
+
+        <p:dialog widgetVar="criarAlbum" header="Novo Álbum" modal="true" height="550" width="1000" resizable="false">
+            <h:form>
+                <h:panelGrid columns="3">
+                    <p:inputText placeholder="Álbum Sem Título" size="70" value="#{albumBean.album.nome}"/>
+                    <p:spacer width="190" height="50"/>
+                    <p:inputText placeholder="Onde estas fotos foram tiradas?" size="40" value="#{albumBean.album.geom}"/>
+                    <p:inputTextarea placeholder="Fale um pouco sobre este álbum..." rows="5" style="width: 98%"
+                                     value="#{albumBean.album.descricao}"/>
+                    <p:spacer width="190" height="50"/>
+                </h:panelGrid>
+
+                <p:commandButton value="Salvar" action="#{albumBean.salvar}" ajax="false" />
+                
+                <p:fileUpload fileUploadListener="#{fotografiaBean.fotoComAlbum}" 
+                                  label="Fotos" mode="advanced" 
+                                  multiple="true" auto="true"/>
+            </h:form>
+        </p:dialog>
+
+        <div id="content" class="center_content">
+            <ui:insert name="content">
+            </ui:insert>
+        </div>
+
+        <div class="rodape">
+            <ui:insert name="rodape">
+                <ui:include src="rodape.xhtml"></ui:include>
+            </ui:insert>
+        </div>
+
+    </h:body>
+
+</html>

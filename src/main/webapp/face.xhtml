@@ -1,0 +1,29 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:ui="http://java.sun.com/jsf/facelets"
+  xmlns:h="http://java.sun.com/jsf/html"
+  xmlns:f="http://java.sun.com/jsf/core"
+  xmlns:p="http://primefaces.org/ui">
+  <h:head>
+    <script name="jquery/jquery.js" library="primefaces"></script>
+  </h:head>
+  <f:view>
+    <h:form prependId="false">
+      <h2>Teste Spring Data Neo4j</h2>
+      <h:panelGrid columns="2">
+        <h:outputText value="Pessoa:"/>
+        <p:inputText value="#{faceBean.face.pessoa.nome}"></p:inputText>
+        <h:outputText value="Fotografia:"/>
+        <p:inputText value="#{faceBean.face.fotografia.id}"></p:inputText>
+      <h:outputText value="Altura:"/>
+      <p:inputText value="#{faceBean.face.altura}"></p:inputText>
+      <h:outputText value="Largura:"/>
+      <p:inputText value="#{faceBean.face.largura}"></p:inputText>
+      <h:outputText value="X:"/>
+      <p:inputText value="#{faceBean.face.x}"></p:inputText>
+      <h:outputText value="Y:"/>
+      <p:inputText value="#{faceBean.face.y}"></p:inputText>
+      </h:panelGrid>
+      <p:commandButton value="Salvar" action="#{faceBean.salvar}" ajax="false"/>
+    </h:form>
+  </f:view>
+</html>
