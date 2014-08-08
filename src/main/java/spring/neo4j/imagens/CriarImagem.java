@@ -29,7 +29,7 @@ public class CriarImagem {
         List<Tag> tag =  extrairMetadados.metadados(event);
         for (Tag nome : tag) {
             System.out.println(nome.getDirectoryName() + " :-----> "+ 
-                    nome.getTagName() + " :-----> " + nome);
+                    nome.getTagName() + " :-----> " + nome.getDescription());
         }
     }
 }
