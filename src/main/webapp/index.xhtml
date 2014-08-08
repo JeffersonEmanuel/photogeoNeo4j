@@ -1,37 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-  xmlns:ui="http://java.sun.com/jsf/facelets"
-  xmlns:h="http://java.sun.com/jsf/html"
-  xmlns:f="http://java.sun.com/jsf/core"
-  xmlns:p="http://primefaces.org/ui">
-  <h:head>
-    <script name="jquery/jquery.js" library="primefaces"></script>
-  </h:head>
-  <f:view>
-    <h:form prependId="false">
-      <h2>Teste Spring Data Neo4j</h2>
-      <h:panelGrid columns="2">
-        <h:outputText value="Nome da Pessoa:"/>
-        <p:inputText value="#{pessoaBean.pessoa.nome}"></p:inputText>
-        <h:outputText value="Estado:"/>
-        <p:inputText value="#{pessoaBean.pessoa.endereco.estado}"></p:inputText>
-        <h:outputText value="Cidade:"/>
-        <p:inputText value="#{pessoaBean.pessoa.endereco.cidade}"></p:inputText>
-      </h:panelGrid>
-      <p:commandButton value="Salvar" action="#{pessoaBean.salvar}" ajax="false"/>
-      <p:separator/>
-      <h:panelGrid columns="1" width="50%">
-          <p:dataTable value="#{pessoaBean.pessoas}" var="pessoa">
-          <p:column headerText="Nome">
-              <h:outputText value="#{pessoa.nome}"/>
-          </p:column>
-          <p:column headerText="Estado">
-              <h:outputText value="#{pessoa.endereco.estado}"/>
-          </p:column>
-          <p:column headerText="Cidade">
-              <h:outputText value="#{pessoa.endereco.cidade}"/>
-          </p:column>
-        </p:dataTable>
-      </h:panelGrid>
-    </h:form>
-  </f:view>
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+    <body>
+
+        <ui:composition template="./templates/template.xhtml">
+
+            <ui:define name="cabecario">
+            </ui:define>
+            <ui:define name="content">
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </ui:define>
+            <ui:define name="rodape">
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
 </html>
